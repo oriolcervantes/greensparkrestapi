@@ -1,0 +1,22 @@
+.checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--black);
+  background-color: var(--white);
+  border-radius: 3px;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox:hover {
+  background-color: var(--palegreen);
+  border: 2px solid var(--darkgray);
+}
+
+.activeCheckbox {
+  background-color: var(--green);
+  border: none;
+}

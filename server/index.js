@@ -6,13 +6,13 @@ const cors = require("cors");
 require("dotenv").config();
 const router = require("./router");
 
-// const corsConfig = {
-//   origin: "http://localhost:3000",
-//   credentials: true,
-// }
+const corsConfig = {
+  origin: "http://localhost:3000",
+  credentials: true,
+}
 
 //Middlewares
-// app.use(cors(corsConfig));
+app.use(cors(corsConfig));
 app.use(express.json());
 app.use(router);
 

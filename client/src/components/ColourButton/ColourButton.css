@@ -1,0 +1,15 @@
+.colourButton {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  margin-left: 4px;
+  box-sizing: border-box;
+}
+
+.colourButton:hover {
+  opacity: 0.8;
+}
+
+.active {
+  border: 2px solid var(--darkgray);
+}
