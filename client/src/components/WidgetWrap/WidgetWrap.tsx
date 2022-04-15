@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import './WidgetWrap.css'
 import Widget from '../Widget/Widget.tsx'
 import { getPlugins } from '../../ApiService.ts'

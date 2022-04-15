@@ -22,9 +22,12 @@ const createPlugin = async (req, res) => {
 
 const updatePlugin = async (req, res) => {
   try {
-
+    const { id, prop, value } = req.body;
+    const updatedPlugin = await pluginSchema.updateOne({ _id: id }, { [prop]: value });
+    res.status(200).send(updatedPlugin);
   } catch (error) {
-
+    console.error(error);
+    res.status(400).send({ error: "400", message: "Could not update plugin" });
   }
 }
 

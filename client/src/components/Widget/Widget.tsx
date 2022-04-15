@@ -24,7 +24,7 @@ const Widget = ({ plugin }) => {
       </div>
       <div className="widgetLink">
         <p>Link to Public Profile<div className='information'>i</div></p>
-        <Checkbox activeCheckbox={plugin.active ? true : false} />
+        <Checkbox activeCheckbox={plugin.links ? true : false} />
       </div>
       <div className="widgetColour">
         <p>Badge colour</p>
