@@ -1,7 +1,10 @@
 .Widget {
   width: 221px;
-  height: 300px;
-  margin: 10px;
+  height: 200px;
+}
+
+.Widget:not(:last-of-type) {
+  margin-right: 50px;
 }
 
 .widgetHead {
@@ -40,7 +43,7 @@
 .widgetToggle {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .information {

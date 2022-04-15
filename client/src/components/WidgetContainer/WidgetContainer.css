@@ -1,8 +1,6 @@
 .widgetContainer {
   display: flex;
   flex-direction: column;
-  min-width: 300px;
-  max-width: 850px;
   height: 350px;
   background-color: var(--palegray);
   padding: 30px;
@@ -14,4 +12,13 @@
   border-bottom: 2px solid var(--darkgray);
   color: var(--black);
   padding-bottom: 10px;
+  font-size: 30px;
+  margin: 10px 0px 20px 0px;
+}
+
+@media (max-width:860px) {
+  .widgetContainer {
+    height: auto;
+    margin: 50px 0;
+  }
 }
