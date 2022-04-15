@@ -5,7 +5,7 @@ import ColourButton from '../ColourButton/ColourButton.tsx'
 import Checkbox from '../Checkbox/Checkbox.tsx'
 import { updatePlugin } from '../../ApiService.ts'
 import { getPlugins } from '../../ApiService.ts'
-import { useAppDispatch, useAppSelector } from '../../redux/store.ts';
+import { useAppDispatch } from '../../redux/store.ts';
 import { savePlugins } from '../../redux/pluginActions.ts';
 
 
@@ -13,7 +13,6 @@ const Widget = ({ plugin }) => {
   const dispatch = useAppDispatch();
 
   const handleClick = async (e, action, value) => {
-    console.log(action, value);
     e.preventDefault();
     const updateObject = { id: plugin._id, prop: action, value: value }
     await updatePlugin(updateObject);
@@ -38,7 +37,15 @@ const Widget = ({ plugin }) => {
         </div>
       </div>
       <div className="widgetLink">
-        <p>Link to Public Profile<div className='information'>i</div></p>
+        <div className="widgetLinkText">Link to Public Profile
+          <div className="tooltip">
+            <span className="information">i</span>
+            <div className="tooltipText">
+              <p>This widget links directly to your public profile so that you can easily share your impact with your customers. Turn it off here if you do not want the badge to link to it.</p>
+              <p>View Public Profile</p>
+            </div>
+          </div>
+        </div>
         <Checkbox activeCheckbox={plugin.links ? true : false} handleClick={handleClick} />
       </div>
       <div className="widgetColour">
