@@ -2,16 +2,18 @@ import React, { useEffect, useState } from 'react'
 import './WidgetWrap.css'
 import Widget from '../Widget/Widget.tsx'
 import { getPlugins } from '../../ApiService.ts'
-import Plugin from '../../Interfaces/plugin'
+import { useAppDispatch, useAppSelector } from '../../redux/store.ts';
+import { savePlugins } from '../../redux/pluginActions.ts';
 
 const WidgetWrap = () => {
 
-  const [plugins, setPlugins] = useState<Plugin[]>()
+  const { plugins } = useAppSelector(state => state.pluginReducer);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     async function init() {
-      const fetchPlugins = await getPlugins();
-      setPlugins(fetchPlugins);
+      const fetchedPlugins = await getPlugins();
+      dispatch(savePlugins(fetchedPlugins));
     }
     init()
   }, [])
