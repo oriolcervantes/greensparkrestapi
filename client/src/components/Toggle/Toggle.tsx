@@ -1,11 +1,11 @@
 import React from 'react'
 import './Toggle.css'
 
-const Toggle = () => {
+const Toggle = ({ activeToggle, handleClick }) => {
   return (
     <label className="switch">
-      <input type="checkbox" />
-      <span className="slider round"></span>
+      {activeToggle === true ? <input type="checkbox" checked /> : <input type="checkbox" />}
+      <span className="slider round" onClick={(e) => handleClick(e, "active", !activeToggle)}></span>
     </label>
   )
 }

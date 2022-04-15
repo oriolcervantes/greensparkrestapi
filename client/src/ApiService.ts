@@ -1,4 +1,5 @@
 import Plugin from './Interfaces/plugin';
+import updateObject from './Interfaces/updateObject';
 
 const URL = "http://localhost:3001";
 
@@ -19,5 +20,17 @@ export function getPlugins(): Promise<Plugin[]> {
     headers: {
       "Content-Type": "application/json"
     },
+  });
+}
+
+export function updatePlugin(updateObject: updateObject): Promise<any> {
+  return fetchRequest(`${URL}/plugins`, {
+    method: "PUT",
+    credentials: 'include',
+    mode: 'cors',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(updateObject)
   });
 }

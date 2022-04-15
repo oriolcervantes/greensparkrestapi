@@ -1,10 +1,10 @@
 import React from 'react'
 import './ColourButton.css'
 
-const ColourButton = ({ style, active }) => {
+const ColourButton = ({ style, activeButton, handleClick }) => {
 
   return (
-    <div className={active ? "colourButton active" : "colourButton"} style={style} ></div>
+    <div className={activeButton ? "colourButton active" : "colourButton"} style={style} onClick={(e) => handleClick(e, "color", style.backgroundColor)}></div>
   )
 }
 
