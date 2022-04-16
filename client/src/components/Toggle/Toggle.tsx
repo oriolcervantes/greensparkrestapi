@@ -1,4 +1,3 @@
-import React from 'react'
 import './Toggle.css'
 
 interface IProps {
@@ -9,8 +8,16 @@ interface IProps {
 const Toggle = ({ activeToggle, handleClick }: IProps) => {
   return (
     <label className="switch">
-      {activeToggle === true ? <input type="checkbox" checked /> : <input type="checkbox" />}
-      <span className="slider round" onClick={() => handleClick("active", !activeToggle)}></span>
+      <input type="checkbox" />
+      {activeToggle === true ?
+        <span className="activeslider" onClick={() => handleClick("active", !activeToggle)}>
+          <span className="activeround"></span>
+        </span>
+        :
+        <span className="slider" onClick={() => handleClick("active", !activeToggle)}>
+          <span className="round"></span>
+        </span>
+      }
     </label>
   )
 }

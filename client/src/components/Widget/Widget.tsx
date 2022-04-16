@@ -1,4 +1,3 @@
-import React from 'react'
 import "./Widget.css"
 import Toggle from '../Toggle/Toggle'
 import ColourButton from '../ColourButton/ColourButton'
