@@ -1,5 +1,6 @@
 .WidgetWrap {
   display: flex;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 860px) {

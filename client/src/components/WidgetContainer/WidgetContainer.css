@@ -1,7 +1,7 @@
 .widgetContainer {
   display: flex;
   flex-direction: column;
-  height: 350px;
+  max-width: 1090px;
   background-color: var(--palegray);
   padding: 30px;
   border-radius: 8px;
