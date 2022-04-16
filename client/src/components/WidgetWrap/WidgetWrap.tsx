@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import './WidgetWrap.css'
-import Widget from '../Widget/Widget.tsx'
-import { getPlugins } from '../../ApiService.ts'
-import { useAppDispatch, useAppSelector } from '../../redux/store.ts';
-import { savePlugins } from '../../redux/pluginActions.ts';
+import Widget from '../Widget/Widget'
+import { getPlugins } from '../../ApiService'
+import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { savePlugins } from '../../redux/pluginActions';
+import Plugin from '../../interfaces/plugin'
 
 const WidgetWrap = () => {
 
@@ -13,14 +14,14 @@ const WidgetWrap = () => {
   useEffect(() => {
     async function init() {
       const fetchedPlugins = await getPlugins();
-      dispatch(savePlugins(fetchedPlugins));
+      dispatch(savePlugins(fetchedPlugins) as any);
     }
     init()
   }, [])
 
   return (
     <div className="WidgetWrap">
-      {plugins && plugins.map(plugin => <Widget key={plugin.id} plugin={plugin} />)}
+      {plugins && plugins.map((plugin: Plugin) => <Widget key={plugin._id} plugin={plugin} />)}
     </div>
   )
 }

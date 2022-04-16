@@ -1,5 +1,5 @@
-import Plugin from './Interfaces/plugin';
-import updateObject from './Interfaces/updateObject';
+import Plugin from './interfaces/plugin';
+import updateObject from './interfaces/updateObject';
 
 const URL = "http://localhost:3001";
 

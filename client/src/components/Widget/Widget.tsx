@@ -1,23 +1,23 @@
 import React from 'react'
 import "./Widget.css"
-import Toggle from '../Toggle/Toggle.tsx'
-import ColourButton from '../ColourButton/ColourButton.tsx'
-import Checkbox from '../Checkbox/Checkbox.tsx'
-import { updatePlugin } from '../../ApiService.ts'
-import { getPlugins } from '../../ApiService.ts'
-import { useAppDispatch } from '../../redux/store.ts';
-import { savePlugins } from '../../redux/pluginActions.ts';
+import Toggle from '../Toggle/Toggle'
+import ColourButton from '../ColourButton/ColourButton'
+import Checkbox from '../Checkbox/Checkbox'
+import { updatePlugin } from '../../ApiService'
+import { getPlugins } from '../../ApiService'
+import { useAppDispatch } from '../../redux/store';
+import { savePlugins } from '../../redux/pluginActions';
+import Plugin from '../../interfaces/plugin'
 
 
-const Widget = ({ plugin }) => {
+const Widget = ({ plugin }: { plugin: Plugin }) => {
   const dispatch = useAppDispatch();
 
-  const handleClick = async (e, action, value) => {
-    e.preventDefault();
+  const handleClick = async (action: string, value: string | boolean) => {
     const updateObject = { id: plugin._id, prop: action, value: value }
     await updatePlugin(updateObject);
     const fetchedPlugins = await getPlugins();
-    dispatch(savePlugins(fetchedPlugins));
+    dispatch(savePlugins(fetchedPlugins) as any);
   }
 
   return (

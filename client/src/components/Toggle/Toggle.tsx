@@ -1,11 +1,16 @@
 import React from 'react'
 import './Toggle.css'
 
-const Toggle = ({ activeToggle, handleClick }) => {
+interface IProps {
+  activeToggle: boolean;
+  handleClick: (action: string, value: boolean) => void;
+}
+
+const Toggle = ({ activeToggle, handleClick }: IProps) => {
   return (
     <label className="switch">
       {activeToggle === true ? <input type="checkbox" checked /> : <input type="checkbox" />}
-      <span className="slider round" onClick={(e) => handleClick(e, "active", !activeToggle)}></span>
+      <span className="slider round" onClick={() => handleClick("active", !activeToggle)}></span>
     </label>
   )
 }

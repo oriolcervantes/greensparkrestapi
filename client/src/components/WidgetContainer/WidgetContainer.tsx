@@ -1,6 +1,6 @@
 import React from 'react'
 import './WidgetContainer.css';
-import WidgetWrap from '../WidgetWrap/WidgetWrap.tsx';
+import WidgetWrap from '../WidgetWrap/WidgetWrap';
 
 
 const WidgetContainer = () => {

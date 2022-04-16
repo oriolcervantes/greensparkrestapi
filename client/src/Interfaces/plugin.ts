@@ -1,8 +1,8 @@
 export default interface Plugin {
-  id: string,
+  _id: string,
   type: string;
   description: string;
-  colour: string;
+  color: string;
   links: boolean;
   active: boolean;
 }
