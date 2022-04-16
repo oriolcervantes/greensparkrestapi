@@ -33,9 +33,12 @@ const updatePlugin = async (req, res) => {
 
 const deletePlugin = async (req, res) => {
   try {
-
+    const { id } = req.body;
+    const deletedPlugin = await pluginSchema.deleteOne({ _id: id });
+    res.status(200).send(deletedPlugin);
   } catch (error) {
-
+    console.error(error);
+    res.status(400).send({ error: "400", message: "Could not update plugin" });
   }
 }
 
