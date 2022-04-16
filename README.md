@@ -14,7 +14,7 @@ Welcome to my solution to Greenspark full stack coding challenge!
 * MongoDB Atlas with Mongoose
 
 ## How to use it
-* Fork this repository and clone it on your local machine. Run `npm install` to install all the dependencies.
+* Fork this repository and clone it on your local machine. Run `npm install` in the root folder, and also in `/server` and `/client` to install all the dependencies.
 * You will need to create a `.env` file in `/server` with the environment variable `MONGODB_URI=`.
 * You can paste there the uri to your MongoDB Atlas database, or ask the author for the uri of the original database.
 * You can now start the server. If nodemon is globally installed on your computer, run `nodemon index.js` from `/server`. It will run on port 3001.
